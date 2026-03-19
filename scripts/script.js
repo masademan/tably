@@ -38,8 +38,8 @@ function unitButton() {
     }
     temp = Math.round(temp * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
     tempFeelsLike = Math.round(tempFeelsLike * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
-    document.querySelector(".temp").textContent = `Temp: ${temp}°${unit}⠀⠀`;
-    document.querySelector(".tempFeelsLike").textContent = `Feels like: ${tempFeelsLike}°${unit}`;
+    document.querySelector(".temp").textContent = `Temp is ${temp}°${unit}⠀⠀`;
+    document.querySelector(".tempFeelsLike").textContent = `Feels like ${tempFeelsLike}°${unit}`;
 }
 
 function switchUnits() {
@@ -133,10 +133,10 @@ async function getWeather() {
                 // weather api request
                 const data = await fetch(weatherURL);
                 const json = await data.json();
-                // console.log(json);
+                console.log(json);
 
                 const cityName = json.name;
-                document.querySelector(".city").textContent = `City: ${cityName}`;
+                document.querySelector(".city").textContent = `${cityName}`;
                 // savedTemp = json.main.temp;
                 // savedFeelsLike = json.main.feels_like;
                 let temp = KtoF(json.main.temp);
@@ -149,8 +149,8 @@ async function getWeather() {
                 }
                 temp = Math.round(temp * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
                 tempFeelsLike = Math.round(tempFeelsLike * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
-                document.querySelector(".temp").textContent = `Temp: ${temp}°${unit}⠀⠀`;
-                document.querySelector(".tempFeelsLike").textContent = `Feels like: ${tempFeelsLike}°${unit}`;
+                document.querySelector(".temp").textContent = `Temp is ${temp}°${unit}⠀⠀`;
+                document.querySelector(".tempFeelsLike").textContent = `Feels like ${tempFeelsLike}°${unit}`;
 
                 const iconURL = getWeatherIconFromCode(json.weather[0].icon);
                 document.querySelector(".weather-icon img").src = iconURL;
@@ -168,7 +168,7 @@ async function getWeather() {
                 weatherDataTimeStamp = localStorage.getItem("weatherDataTimeStamp");
             });
         } else {
-            document.querySelector(".city").textContent = `City: ${savedCityName}`;
+            document.querySelector(".city").textContent = `${savedCityName}`;
             let temp = KtoF(savedTemp);
             let tempFeelsLike = KtoF(savedFeelsLike);
             let unit = "F";
@@ -179,8 +179,8 @@ async function getWeather() {
             }
             temp = Math.round(temp * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
             tempFeelsLike = Math.round(tempFeelsLike * 10 ** decimalsToRoundTo) / 10 ** decimalsToRoundTo;
-            document.querySelector(".temp").textContent = `Temp: ${temp}°${unit}⠀⠀`;
-            document.querySelector(".tempFeelsLike").textContent = `Feels like: ${tempFeelsLike}°${unit}`;
+            document.querySelector(".temp").textContent = `Temp is ${temp}°${unit}⠀⠀`;
+            document.querySelector(".tempFeelsLike").textContent = `Feels like ${tempFeelsLike}°${unit}`;
             document.querySelector(".weather-icon img").src = savedWeatherIconUrl;
         }
     }
