@@ -1,0 +1,25 @@
+{
+  "name": "Tably",
+  "description": "Loads time, weather, etc. on a dashboard when you open up a new tab",
+  "version": "1.9",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "host_permissions": [
+    "https://api.openweathermap.org/*",
+    "https://zenquotes.io/*",
+    "https://corsproxy.io/*",
+    "https://ll.thespacedevs.com/*",
+    "https://picsum.photos/*",
+    "https://raw.githubusercontent.com/*",
+    "https://fonts.googleapis.com/*",
+    "https://fonts.gstatic.com/*"
+  ],
+  "permissions": [
+    "geolocation",
+    "storage",
+    "scripting",
+    "activeTab"
+  ]
+}
