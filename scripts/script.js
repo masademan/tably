@@ -128,7 +128,7 @@ async function getWeather() {
             navigator.geolocation.getCurrentPosition(async function(position) {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
-                const apikey = 'a202d86abefde616a6d380e85d119e81';
+                const apikey = 'fa56b28ef37a96d8cc5ad54f5069cb5d';
                 weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`;
                 // weather api request
                 const data = await fetch(weatherURL);
